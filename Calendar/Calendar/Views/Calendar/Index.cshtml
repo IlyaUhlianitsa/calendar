@@ -1,7 +1,41 @@
-﻿@model DateTime
+﻿@model Calendar.Models.CalendarModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Calendar";
 }
 
-<h2>@Model</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th colspan="7">@Model.Title</th>
+    </tr>
+    <tr>
+        <th>@DayOfWeek.Sunday</th>
+        <th>@DayOfWeek.Monday</th>
+        <th>@DayOfWeek.Tuesday</th>
+        <th>@DayOfWeek.Wednesday</th>
+        <th>@DayOfWeek.Thursday</th>
+        <th>@DayOfWeek.Friday</th>
+        <th>@DayOfWeek.Saturday</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{ var weekCount = Math.Ceiling(((double)(Model.EndDay + Model.StartDayOfWeak - 1) / 7));}
+    @for (int week = 0, day = 1, position = 1; week < weekCount; week++)
+    {
+        <tr>
+            @for (var i = 0; i < 7; i++, position++)
+            {
+                if (position < Model.StartDayOfWeak || ((position - Model.StartDayOfWeak) >= Model.EndDay))
+                {
+                    <td></td>
+                }
+                else
+                {
+                    <td>@(day++)</td>
+                }
+            }
+        </tr>
+    }
+    </tbody>
+</table>
 

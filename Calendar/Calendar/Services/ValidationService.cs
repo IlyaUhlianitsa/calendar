@@ -6,7 +6,8 @@ namespace Calendar.Services
     {
         public string Validate(string year, string month, out DateTime date)
         {
-            date = DateTime.Now;
+            var currentDate = DateTime.Now;
+            date = new DateTime(currentDate.Year, currentDate.Month, 1);
             if (string.IsNullOrEmpty(year) && string.IsNullOrEmpty(month))
                 return null;
 

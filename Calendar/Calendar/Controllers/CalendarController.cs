@@ -1,4 +1,5 @@
-﻿using Calendar.Services;
+﻿using Calendar.Models;
+using Calendar.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Calendar.Controllers
@@ -18,7 +19,14 @@ namespace Calendar.Controllers
             if (!string.IsNullOrEmpty(result))
                 return View("Error", result);
 
-            return View(date);
+            var model = new CalendarModel
+            {
+                Title = date.ToString("yyyy MMMM").ToUpper(),
+                StartDayOfWeak = (int) date.DayOfWeek + 1,
+                EndDay = date.AddMonths(1).AddSeconds(-1).Day
+            };
+
+            return View(model);
         }
 
     }
