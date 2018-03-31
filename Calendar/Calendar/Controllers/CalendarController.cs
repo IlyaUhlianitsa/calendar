@@ -1,35 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Calendar.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Calendar.Controllers
 {
     public class CalendarController : Controller
     {
+        private ValidationService validationService;
+        public CalendarController(ValidationService validationService)
+        {
+            this.validationService = validationService;
+        }
+
         public IActionResult Index(string year, string month)
         {
-            var result = Validate(year, month);
-            if (!string.IsNullOrEmpty(result.error))
-                return View("Error", result.error);
+            var result = validationService.Validate(year, month, out var date);
 
-            return View(result.date.Value);
+            if (!string.IsNullOrEmpty(result))
+                return View("Error", result);
+
+            return View(date);
         }
 
-        private (DateTime? date, string error) Validate(string year, string month)
-        {
-            string error = null;
-            if (string.IsNullOrEmpty(year) && string.IsNullOrEmpty(month))
-            {
-                var currentDate = DateTime.Now;
-                return (currentDate, error);
-            }
-
-            if (string.IsNullOrEmpty(month))
-                return (null, "Month is required");
-
-            return (new DateTime(5, 5, 1), error);
-        }
     }
 }
