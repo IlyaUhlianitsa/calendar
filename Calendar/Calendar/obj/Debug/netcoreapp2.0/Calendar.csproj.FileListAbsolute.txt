@@ -1,0 +1,11 @@
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.deps.json
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.runtimeconfig.json
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.runtimeconfig.dev.json
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.dll
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.pdb
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.csprojResolveAssemblyReference.cache
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.csproj.CoreCompileInputs.cache
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.AssemblyInfoInputs.cache
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.AssemblyInfo.cs
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.dll
+F:\Ilya\Projects\C#\ASP.NETCore_Task02_Uglyanitsa\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.pdb
