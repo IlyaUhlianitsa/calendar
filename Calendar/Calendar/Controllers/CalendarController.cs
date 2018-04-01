@@ -6,7 +6,7 @@ namespace Calendar.Controllers
 {
     public class CalendarController : Controller
     {
-        private ValidationService validationService;
+        private readonly ValidationService validationService;
         public CalendarController(ValidationService validationService)
         {
             this.validationService = validationService;
@@ -22,7 +22,7 @@ namespace Calendar.Controllers
             var model = new CalendarModel
             {
                 Title = date.ToString("yyyy MMMM").ToUpper(),
-                StartDayOfWeak = (int) date.DayOfWeek + 1,
+                StartDayOfWeak = (int) date.DayOfWeek,
                 EndDay = date.AddMonths(1).AddSeconds(-1).Day
             };
 

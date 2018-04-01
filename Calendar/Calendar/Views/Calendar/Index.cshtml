@@ -3,39 +3,43 @@
     ViewData["Title"] = "Calendar";
 }
 
-<table class="table">
-    <thead>
-    <tr>
-        <th colspan="7">@Model.Title</th>
-    </tr>
-    <tr>
-        <th>@DayOfWeek.Sunday</th>
-        <th>@DayOfWeek.Monday</th>
-        <th>@DayOfWeek.Tuesday</th>
-        <th>@DayOfWeek.Wednesday</th>
-        <th>@DayOfWeek.Thursday</th>
-        <th>@DayOfWeek.Friday</th>
-        <th>@DayOfWeek.Saturday</th>
-    </tr>
-    </thead>
-    <tbody>
-    @{ var weekCount = Math.Ceiling(((double)(Model.EndDay + Model.StartDayOfWeak - 1) / 7));}
-    @for (int week = 0, day = 1, position = 1; week < weekCount; week++)
-    {
-        <tr>
-            @for (var i = 0; i < 7; i++, position++)
-            {
-                if (position < Model.StartDayOfWeak || ((position - Model.StartDayOfWeak) >= Model.EndDay))
-                {
-                    <td></td>
-                }
-                else
-                {
-                    <td>@(day++)</td>
-                }
-            }
-        </tr>
-    }
-    </tbody>
-</table>
+<link  rel="stylesheet" href="~/css/calendar.css"/>
 
+<div class="calendar-container">
+    <table class="table table-bordered table-sm">
+        <thead>
+            <tr>
+                <th colspan="7" class="text-center">@Model.Title</th>
+            </tr>
+            <tr>
+                <th scope="col">@DayOfWeek.Sunday</th>
+                <th scope="col">@DayOfWeek.Monday</th>
+                <th scope="col">@DayOfWeek.Tuesday</th>
+                <th scope="col">@DayOfWeek.Wednesday</th>
+                <th scope="col">@DayOfWeek.Thursday</th>
+                <th scope="col">@DayOfWeek.Friday</th>
+                <th scope="col">@DayOfWeek.Saturday</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ var weekCount = Math.Ceiling(((double)(Model.EndDay + Model.StartDayOfWeak) / 7));}
+            @for (int week = 0, day = 1, position = 0; week < weekCount; week++)
+            {
+                <tr>
+                    @for (var i = 0; i < 7; i++, position++)
+                    {
+                        if (position < Model.StartDayOfWeak || ((position - Model.StartDayOfWeak) >= Model.EndDay))
+                        {
+                            <td></td>
+                        }
+                        else
+                        {
+                            <td class="text-center">@(day++)</td>
+                        }
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
